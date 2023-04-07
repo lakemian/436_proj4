@@ -3,7 +3,7 @@ package com.profjpbaugh.viewmodeldemo.ui.main
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MainViewModel : ViewModel() {
+class TopViewModel : ViewModel() {
     private val rate = 0.74f
     private var dollarText = ""
     //private var result : Float = 0f

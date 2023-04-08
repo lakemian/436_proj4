@@ -20,18 +20,22 @@ class MainActivity : AppCompatActivity(), TopFragment.ButtonListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
-    override fun onCatButtonClick() {
+
+    override fun onCatButtonClick(catName: String) {
         var catUrl = "https://api.thecatapi.com/v1/breeds" + "?api_key=live_6j9bzI8mJIozy4aIKa6pnSAy4AA2ymCTgVSOiNrdG1sNX02KJozuh3vZca4g2ZBt"
         val queue = Volley.newRequestQueue(this)
         val stringRequest = StringRequest(
             Request.Method.GET, catUrl,
             { response ->
-                var catsArray : JSONArray = JSONArray(response)
+                var catsArray = JSONArray(response)
                 for(i in 0 until catsArray.length())
                 {
                     var theCat : JSONObject = catsArray.getJSONObject(i)
-                    Log.i("TopFragment", "Cat Name: ${theCat.getString("name")}")
-                    Log.i("TopFragment", "Cat Description: ${theCat.getString("description")}")
+                    if(theCat.getString("name").equals(catName))
+                    {
+                        Log.i("TopFragment", "Cat Description: ${theCat.getString("description")}")//needs to communicate with bottom fragment
+                        break
+                    }
                 }
             },
             {

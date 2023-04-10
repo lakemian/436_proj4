@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity(), TopFragment.ButtonListener {
     }
 
     override fun onCatButtonClick(catName: String) {
-        // val bottomFragment = supportFragmentManager.findFragmentById(R.id.bottomFragment) as BottomFragment
+        val bottomFragment = supportFragmentManager.findFragmentById(R.id.bottomFragment) as BottomFragment
 
 
         var catUrl = "https://api.thecatapi.com/v1/breeds" + "?api_key=live_6j9bzI8mJIozy4aIKa6pnSAy4AA2ymCTgVSOiNrdG1sNX02KJozuh3vZca4g2ZBt"
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity(), TopFragment.ButtonListener {
                         Log.i("TopFragment", "Cat Description: ${theCat.getString("temperament")} ")
                         Log.i("TopFragment", "Cat Description: ${theCat.getJSONObject("image").getString("url")} ")
 
-                        //bottomFragment.catInfo(theCat.getString("name"), theCat.getString("temperament"), theCat.getString("origin"), theCat.getJSONObject("image").getString("url") )
+                        bottomFragment.catInfo(theCat.getString("name"), theCat.getString("temperament"), theCat.getString("origin"), theCat.getJSONObject("image").getString("url") )
                         break
                     }
                 }

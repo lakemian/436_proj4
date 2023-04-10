@@ -33,7 +33,7 @@ class BottomFragment : Fragment() {
 
     public fun catInfo(name : String, temperament: String, origin : String, url : String){
         //description of the cat
-        binding.txtCat.text = "name: " + name +  "\n" + "Temperament: " + temperament + "\n" + "Origin" + origin + "\n"
+        binding.txtCat.text = "Name: " + name +  "\n\n" + "Temperament: " + temperament + "\n\n" + "Origin: " + origin + "\n"
 
         //get image using the url provided
         Picasso.get().load(url).into(binding.catPic)

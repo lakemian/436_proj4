@@ -20,7 +20,7 @@
         tools:layout="@layout/fragment_top" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView6"
+        android:id="@+id/bottomFragment"
         android:name="com.profjpbaugh.viewmodeldemo.ui.main.BottomFragment"
         android:layout_width="392dp"
         android:layout_height="444dp"

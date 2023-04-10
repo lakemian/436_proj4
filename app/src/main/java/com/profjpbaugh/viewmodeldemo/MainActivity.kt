@@ -22,6 +22,9 @@ class MainActivity : AppCompatActivity(), TopFragment.ButtonListener {
     }
 
     override fun onCatButtonClick(catName: String) {
+        val bottomFragment = supportFragmentManager.findFragmentById(R.id.bottomFragment) as BottomFragment
+
+
         var catUrl = "https://api.thecatapi.com/v1/breeds" + "?api_key=live_6j9bzI8mJIozy4aIKa6pnSAy4AA2ymCTgVSOiNrdG1sNX02KJozuh3vZca4g2ZBt"
         val queue = Volley.newRequestQueue(this)
         val stringRequest = StringRequest(
@@ -33,7 +36,13 @@ class MainActivity : AppCompatActivity(), TopFragment.ButtonListener {
                     var theCat : JSONObject = catsArray.getJSONObject(i)
                     if(theCat.getString("name").equals(catName))
                     {
-                        Log.i("TopFragment", "Cat Description: ${theCat.getString("description")}")//needs to communicate with bottom fragment
+                        //thinking about adding an array of the class Cats but idk if I should
+                        //var cat = Cat(theCat.getString("name"), theCat.getString("temperament"), theCat.getString("origin"), theCat.getJSONObject("image").getString("url"))
+
+                        Log.i("TopFragment", "Cat Description: ${theCat.getString("temperament")} ")
+                        Log.i("TopFragment", "Cat Description: ${theCat.getJSONObject("image").getString("url")} ")
+
+                        bottomFragment.catInfo(theCat.getString("name"), theCat.getString("temperament"), theCat.getString("origin"), theCat.getJSONObject("image").getString("url") )
                         break
                     }
                 }

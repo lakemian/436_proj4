@@ -37,7 +37,7 @@ class TopFragment : Fragment(), AdapterView.OnItemSelectedListener {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
+        //puts all the cat names in the spinner
         val catUrl = "https://api.thecatapi.com/v1/breeds" + "?api_key=live_6j9bzI8mJIozy4aIKa6pnSAy4AA2ymCTgVSOiNrdG1sNX02KJozuh3vZca4g2ZBt"
         val queue = Volley.newRequestQueue(requireContext().applicationContext)
         val catNames = ArrayList<String>()
@@ -65,7 +65,6 @@ class TopFragment : Fragment(), AdapterView.OnItemSelectedListener {
         binding.spinner.onItemSelectedListener = this
     }
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -84,9 +83,8 @@ class TopFragment : Fragment(), AdapterView.OnItemSelectedListener {
     }
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-
+        TODO("Not yet implemented")
     }
-
     override fun onNothingSelected(parent: AdapterView<*>?) {
         TODO("Not yet implemented")
     }

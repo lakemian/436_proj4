@@ -10,8 +10,8 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
         android:name="com.profjpbaugh.viewmodeldemo.ui.main.TopFragment"
-        android:layout_width="404dp"
-        android:layout_height="151dp"
+        android:layout_width="413dp"
+        android:layout_height="374dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.478"
